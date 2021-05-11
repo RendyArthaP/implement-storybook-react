@@ -23,6 +23,9 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   label: 'Test Button',
+  backgroundColor: {
+    control: '#000000'
+  }
 };
 
 export const Secondary = Template.bind({});
