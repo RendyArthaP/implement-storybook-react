@@ -1,6 +1,6 @@
 import React from 'react';
-
-import { Button } from './Button';
+import { action } from '@storybook/addon-actions'
+import Button from '../components/Button/Button';
 
 export default {
   title: 'Example/Button',
@@ -10,27 +10,35 @@ export default {
   },
 };
 
-const Template = (args) => <Button {...args} />;
+
+const Template = (args) => 
+  <Button 
+    {...args}
+    onClick={action('clicked')}
+  >
+    {args.label}
+  </Button>;
 
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  label: 'Button',
+  label: 'Test Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: 'Button',
+  label: 'Button Test',
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: 'large',
-  label: 'Button',
+  label: 'Button Button',
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: 'small',
-  label: 'Button',
+  label: 'Button Test Button',
 };
+
